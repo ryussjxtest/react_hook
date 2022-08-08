@@ -8,8 +8,11 @@ const heavyWork = ()=>{
 }
 
 function App() {
- const [names, setNames] = useState(heavyWork());
- const [input, setInput] = useState('');
+//  const [names, setNames] = useState(heavyWork());
+  const [names, setNames] = useState(()=>{
+    return heavyWork();
+  });
+  const [input, setInput] = useState('');
  
  const handleInputChange = (e) =>{
   setInput(e.target.value);
