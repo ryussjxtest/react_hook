@@ -5,6 +5,7 @@ import UseEffect from './hooktest/UseEffect';
 import Timer from './hooktest/Timer';
 import UseRef from './hooktest/UseRef';
 import UseRefDom from './hooktest/UseRefDom';
+import UseContext from './hooktest/UseContext';
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
 
  return(
     <div>
-      
+      <UseContext />
       <UseRefDom />      
       <UseRef />      
       {showTimer && <Timer />}
