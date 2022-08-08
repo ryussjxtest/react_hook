@@ -2,15 +2,6 @@ import './App.css';
 import { useState } from 'react';
 import UseState from './hooktest/UseState';
 import UseEffect from './hooktest/UseEffect';
-
-
-function App() {
- return(
-    <div>
-import './App.css';
-import { useState } from 'react';
-import UseState from './hooktest/UseState';
-import UseEffect from './hooktest/UseEffect';
 import Timer from './hooktest/Timer';
 import UseRef from './hooktest/UseRef';
 
@@ -32,12 +23,6 @@ function App() {
 
       <div> <p> ======= [[  UseState ]] ======= </p></div>       
       <UseState />
-    </div>
-  );
-}
-
-export default App;
-
     </div>
   );
 }
