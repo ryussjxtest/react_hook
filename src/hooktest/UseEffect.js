@@ -30,12 +30,22 @@ export default function UseEffect(){
   const [count, setCount] = useState(1);
   const [name, setName] = useState("");
 
-  // 랜더링 될때 마다 매번 실행됨
-  // 전체 페이지는 아니고...UseEffect()  페이지(Component)가 랜더링 될때만....
+  // 처음 렌더링.. 그리고 두번째 인자가 변경될때 마다 렌더링 하게 수정.
   useEffect(()=>{
-    console.log('useEffect /wo second factor..');
+    console.log('👀👀👀👀👀count changed..');
   }
-  );
+  ,[count]); // dependency array...count가 변경될때만 렌더링 된다.
+    useEffect(()=>{
+    console.log('✔✔✔✔✔✔✔✔✔name changed..');
+  }
+  ,[name]); // dependency array...count가 변경될때만 렌더링 된다.
+
+  // 처음 한번만 렌더링...  두번째 인자에 null array...
+  useEffect(()=>{
+    console.log('처음 한번만 렌더링...👍👍👍👍👍👍👍');
+  }
+  ,[]); // null array...
+
   const handleCountUpdate =() =>{
     setCount(count + 1);
   }
