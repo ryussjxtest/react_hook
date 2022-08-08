@@ -21,6 +21,7 @@ export default function Timer(){
   
   return(
     <div>
+      <div> <p> ======= [[  UseEffect  cleanup ]] ======= </p></div> 
       <span>타이머를 시작합니다. 콘솔을 보세요</span>
       {/* <span>count : {count}</span> */}
     </div>

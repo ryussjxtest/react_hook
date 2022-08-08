@@ -4,6 +4,7 @@ import UseState from './hooktest/UseState';
 import UseEffect from './hooktest/UseEffect';
 import Timer from './hooktest/Timer';
 import UseRef from './hooktest/UseRef';
+import UseRefDom from './hooktest/useRefDom';
 
 
 function App() {
@@ -12,16 +13,12 @@ function App() {
  return(
     <div>
       
-      <div> <p> ======= [[  UseRef ]] ======= </p></div> 
-      <UseRef />
-      <div> <p> ======= [[  UseEffect  cleanup ]] ======= </p></div> 
+      <UseRefDom />      
+      <UseRef />      
       {showTimer && <Timer />}
       <button onClick={()=>{setShowTimer(!showTimer)}}>Toggle Timer..</button>
-
-      <div> <p> ======= [[  UseEffect ]] ======= </p></div> 
-      <UseEffect />
-
-      <div> <p> ======= [[  UseState ]] ======= </p></div>       
+     
+      <UseEffect />             
       <UseState />
     </div>
   );

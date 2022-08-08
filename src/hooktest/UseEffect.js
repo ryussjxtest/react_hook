@@ -54,7 +54,9 @@ export default function UseEffect(){
   }
   return(
     <>
+      <div> <p> ======= [[  UseEffect ]] ======= </p></div> 
       <div>
+        
         <button onClick={handleCountUpdate}> Update </button>
         <span> count: {count}</span>
         <input type="text" value = {name} onChange={handleInputChange}/>
