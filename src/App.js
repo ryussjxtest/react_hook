@@ -14,13 +14,13 @@ function App() {
  return(
     <div>
       <UseContext />
-      <UseRefDom />      
-      <UseRef />      
-      {showTimer && <Timer />}
-      <button onClick={()=>{setShowTimer(!showTimer)}}>Toggle Timer..</button>
-     
+      {/* <UseRefDom /> */}
+      {/* <UseRef /> */}
+      {/* {showTimer && <Timer />} */}
+      {/* <button onClick={()=>{setShowTimer(!showTimer)}}>Toggle Timer..</button> */}
+      {/*      
       <UseEffect />             
-      <UseState />
+      <UseState /> */}
     </div>
   );
 }

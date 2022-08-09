@@ -1,4 +1,6 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import ThemeContext from "../context/ThemeContext";
+import UserContext from "../context/UserContext";
 import Page from "./Page";
 
 
@@ -16,6 +18,17 @@ export default function UseContext(){
   const [isDark, setIsDark] = useState(false);
 
   return(
-    <Page isDark={isDark} setIsDark={setIsDark} />
+  // 1. Props Drilling
+  // <Page isDark={isDark} setIsDark={setIsDark} />
+
+  // 2. useContext.
+  // Provider는 전달하고자 하는 value를 props로 하나 받는다.
+  // Provider가 감싸는 하위 component는 useContext로 사용가능
+    <UserContext.Provider value={"사용자"}>
+      <ThemeContext.Provider value={{isDark, setIsDark}}>
+        <Page />
+      </ThemeContext.Provider>
+    </UserContext.Provider>
+    
   );
 }
