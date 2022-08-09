@@ -2,13 +2,18 @@ import { useCallback, useEffect, useState } from "react";
 
 export default function UseCallback(){
   const [number, setNumber] = useState(0);
+
+  //함수 memoization 두번째...추가 state
+  // 아래 toggle이 버튼이 눌려 변경되더라도 memoization된 somFunction은 호출안됨.
+  const [toggle, setToggle] = useState(true);
+
+
   // // function somFunction (){ //함수 정의도 마찬가지 계속 불린다..
   // // 결국 함수도 객체. reference가 함수이름에 저장됨.
   // const somFunction = ()=>{ //함수식,, 
   //   console.log("[somFunction] number : ",number)
   //   return;
   // };
-
 
   // 결국 아래와 같이 useCallback으로 감싼다.
   const somFunction = useCallback(()=>{ //함수식,, 
@@ -37,6 +42,8 @@ export default function UseCallback(){
         console.log(e.target.value);
       }}
       />
+      <button onClick={()=>setToggle(!toggle)}>{toggle.toString()}</button>
+      <br />
       <button onClick={somFunction}>Call somFunc</button>
   </div>
   )
