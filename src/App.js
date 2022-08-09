@@ -10,6 +10,7 @@ import UseMemo from './hooktest/UseMemo';
 import UseMemo2 from './hooktest/UseMemo2';
 import UseCallback from './hooktest/UseCallback';
 import UseCallback2Box from './hooktest/UseCallback2Box';
+import UseReducer from './hooktest/UseReducer';
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
 
  return(
     <div>
-      <UseCallback2Box />
+      <UseReducer />
+      {/* <UseCallback2Box /> */}
       {/* <UseCallback /> */}
       {/* <UseMemo2 /> */}
       {/* <UseMemo /> */}
