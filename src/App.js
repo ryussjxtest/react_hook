@@ -6,6 +6,7 @@ import Timer from './hooktest/Timer';
 import UseRef from './hooktest/UseRef';
 import UseRefDom from './hooktest/UseRefDom';
 import UseContext from './hooktest/UseContext';
+import UseMemo from './hooktest/UseMemo';
 
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
 
  return(
     <div>
-      <UseContext />
+      <UseMemo />
+      {/* <UseContext /> */}
       {/* <UseRefDom /> */}
       {/* <UseRef /> */}
       {/* {showTimer && <Timer />} */}
