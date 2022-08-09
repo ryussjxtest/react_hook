@@ -9,6 +9,7 @@ import UseContext from './hooktest/UseContext';
 import UseMemo from './hooktest/UseMemo';
 import UseMemo2 from './hooktest/UseMemo2';
 import UseCallback from './hooktest/UseCallback';
+import UseCallback2 from './hooktest/UseCallback2';
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
 
  return(
     <div>
-      <UseCallback />
+      <UseCallback2 />
+      {/* <UseCallback /> */}
       {/* <UseMemo2 /> */}
       {/* <UseMemo /> */}
       {/* <UseContext /> */}
