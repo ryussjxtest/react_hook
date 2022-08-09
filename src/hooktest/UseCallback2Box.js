@@ -1,21 +1,39 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Box4UseCallbackBox from "./Box4UseCallbackBox";
 
-export default function UseCallback2(){
+export default function UseCallback2Box(){
   const [ size, setSize] = useState(100);
+  const [ isDark, setIsDark] = useState(false);
 
-  const createBoxStyle = () =>{
+  // useCallback를 적용하는 것을 명확하게 하기 위해 전체 다 막는다.
+  // 다른것이 호출되면 createBoxStyle도 계속 초기화 되어....
+  // 이를 props로 받는 하위 component도 추가 렌더링된다.
+  // const createBoxStyle = () =>{
+  //   // style을 생성하여 리턴
+  //   return {
+  //     backgroundColor : 'pink',
+  //     width : `${size}px`,
+  //     height : `${size}px`,
+  //   };
+  // };
+
+  
+  const createBoxStyle = useCallback(() =>{
     // style을 생성하여 리턴
     return {
       backgroundColor : 'pink',
       width : `${size}px`,
       height : `${size}px`,
     };
-  };
+  },[size]); // 그리고 호출되어야 할때... depency array..
+
 
   return(
-  <div>
-    <h1>UseCallback2 예제</h1>
+  <>
+    <div 
+    style={{background:isDark? "gray":"white"}}
+    >
+    <h1>UseCallback2Box 예제</h1>
     <span>boxsize</span>
     <input 
       type = "number"
@@ -25,8 +43,12 @@ export default function UseCallback2(){
         console.log("boxsize : ",e.target.value);
       }}
       />
-      <Box4UseCallbackBox createBoxStyle={createBoxStyle}/>
-  </div>
+    
+    <button onClick={()=>setIsDark(!isDark)}>Chnage Theme</button>
+    <Box4UseCallbackBox createBoxStyle={createBoxStyle}/>
+    </div>
+
+  </>
   )
 }
 
