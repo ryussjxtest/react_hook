@@ -4,6 +4,7 @@ import Students4UseReducer2 from "./Students4UseReducer2";
 export const ACTION_TYPES = {
   add:'add',
   del:'del',
+  mark:'mark',
 }
 const reducer = (state, action) => {
   console.log("dispatch ==> reducer   ",state,action);
@@ -28,6 +29,16 @@ const reducer = (state, action) => {
             //삭제할 것과 다르면...리턴즉 남긴다. true만 남기므로.. !==
           })
       };
+      case ACTION_TYPES.mark:
+        return{
+          count : state.count,
+          students: state.students.map((s)=>{
+            if (s.id === action.payload.id){
+              return {...s, isHere:!s.isHere}
+            }
+            return s;
+          }),
+        }
     default :
       return state;
   }
@@ -81,6 +92,7 @@ export default function UseReducer2(){
             name={s.name} 
             dispatch = {dispatch}
             id = {s.id}
+            isHere = {s.isHere}
             />
         );
 
