@@ -8,6 +8,7 @@ import UseRefDom from './hooktest/UseRefDom';
 import UseContext from './hooktest/UseContext';
 import UseMemo from './hooktest/UseMemo';
 import UseMemo2 from './hooktest/UseMemo2';
+import UseCallback from './hooktest/UseCallback';
 
 
 function App() {
@@ -15,16 +16,16 @@ function App() {
 
  return(
     <div>
-      <UseMemo2 />
+      <UseCallback />
+      {/* <UseMemo2 /> */}
       {/* <UseMemo /> */}
       {/* <UseContext /> */}
       {/* <UseRefDom /> */}
       {/* <UseRef /> */}
       {/* {showTimer && <Timer />} */}
       {/* <button onClick={()=>{setShowTimer(!showTimer)}}>Toggle Timer..</button> */}
-      {/*      
-      <UseEffect />             
-      <UseState /> */}
+      {/* <UseEffect />              */}
+      {/* <UseState /> */}
     </div>
   );
 }
