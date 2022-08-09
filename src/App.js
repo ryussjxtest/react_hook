@@ -7,6 +7,7 @@ import UseRef from './hooktest/UseRef';
 import UseRefDom from './hooktest/UseRefDom';
 import UseContext from './hooktest/UseContext';
 import UseMemo from './hooktest/UseMemo';
+import UseMemo2 from './hooktest/UseMemo2';
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
 
  return(
     <div>
-      <UseMemo />
+      <UseMemo2 />
+      {/* <UseMemo /> */}
       {/* <UseContext /> */}
       {/* <UseRefDom /> */}
       {/* <UseRef /> */}
