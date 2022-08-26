@@ -3,6 +3,11 @@ import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
 import UserContext from "../context/UserContext";
 
+
+// // 1. Props Drilling
+// export default function Header({isDark}){
+
+
 // 2.use context
 export default function Header(){
   const {isDark} = useContext(ThemeContext);
@@ -17,8 +22,7 @@ export default function Header(){
   const user = useContext(UserContext);
   console.log("[Header]  user : ",user);
 
-// // 1. Props Drilling
-// export default function Header({isDark}){
+
   return (
     <header
       className='header'
